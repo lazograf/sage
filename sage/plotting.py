@@ -82,7 +82,7 @@ def plot(explanation,
         std = None
     else:
         assert 0 < confidence_level < 1
-        std = std * norm.ppf(0.5 + confidence_level / 2)
+        std = np.array(std) * norm.ppf(0.5 + confidence_level / 2)
 
     # Make plot.
     fig = plt.figure(figsize=figsize)
